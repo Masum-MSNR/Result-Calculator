@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/prl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".Activities.NameList">
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:background="@drawable/ripple_a"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="Back"
+            android:src="@drawable/ic_back"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="@string/guild_war"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="RelativeOverlap" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:background="@drawable/ripple_a"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="Home"
+            android:src="@drawable/ic_home"
+            tools:ignore="ContentDescription" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv"
+            android:background="#000" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/exo_extrabold"
+        android:gravity="center"
+        android:text="@string/enter_guild_and_squad_name"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        tools:ignore="AllCaps" />
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/next"
+        android:layout_below="@+id/title"
+        android:overScrollMode="never"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:scrollbarSize="0dp">
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <EditText
+                android:id="@+id/guildNameEt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guild_1"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/squadNameEt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="start"
+                android:hint="@string/squad_1"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="10"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/guildNameEt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guild_2"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/squadNameEt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="start"
+                android:hint="@string/squad_2"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="10"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/guildNameEt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guild_3"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/squadNameEt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="start"
+                android:hint="@string/squad_3"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="10"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/guildNameEt4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guild_4"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/squadNameEt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="start"
+                android:hint="@string/squad_4"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="10"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/guildNameEt5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guild_5"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/squadNameEt5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="start"
+                android:hint="@string/squad_5"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="10"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/guildNameEt6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guild_6"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/squadNameEt6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="start"
+                android:hint="@string/squad_6"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="10"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/guildNameEt7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guild_7"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/squadNameEt7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="start"
+                android:hint="@string/squad_7"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="10"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/guildNameEt8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guild_8"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/squadNameEt8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="start"
+                android:hint="@string/squad_8"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="10"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/guildNameEt9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guild_9"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/squadNameEt9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="start"
+                android:hint="@string/squad_9"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="10"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/guildNameEt10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guild_10"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/squadNameEt10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="start"
+                android:hint="@string/squad_10"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="10"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/guildNameEt11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guild_11"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/squadNameEt11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="start"
+                android:hint="@string/squad_11"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="10"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/guildNameEt12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guild_12"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/squadNameEt12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="start"
+                android:hint="@string/squad_12"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLength="10"
+                android:maxLines="1" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ripple_next"
+        android:gravity="center"
+        android:text="@string/next"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+</RelativeLayout>

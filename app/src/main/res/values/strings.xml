@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Result Calculator</string>
+    <string name="enter_guild_name"><u>Enter Guild Name</u></string>
+    <string name="enter_guild_and_squad_name"><u>Enter Guild &amp; Squad Name</u></string>
+    <string name="match"><u>Match</u></string>
+    <string name="enter_position_and_kill"><u>Enter Position &amp; Kill</u></string>
+    <string name="result">Result</string>
+    <string name="select_war_type"><u>Select War Type</u></string>
+    <string name="guild_war_12">12 Guild War</string>
+    <string name="guild_war_6">6 Guild War</string>
+    <string name="guild_war_4">4 Guild War</string>
+    <string name="guild_war_3">3 Guild War</string>
+    <string name="guild_war_2">2 Guild War</string>
+    <string name="guild_war">Guild War</string>
+    <string name="home">Home</string>
+    <string name="tournament">Tournament</string>
+    <string name="guild_1">Guild-1</string>
+    <string name="squad_1">Squad-1</string>
+    <string name="guild_2">Guild-2</string>
+    <string name="squad_2">Squad-2</string>
+    <string name="guild_3">Guild-3</string>
+    <string name="squad_3">Squad-3</string>
+    <string name="guild_4">Guild-4</string>
+    <string name="squad_4">Squad-4</string>
+    <string name="guild_5">Guild-5</string>
+    <string name="squad_5">Squad-5</string>
+    <string name="guild_6">Guild-6</string>
+    <string name="squad_6">Squad-6</string>
+    <string name="guild_7">Guild-7</string>
+    <string name="squad_7">Squad-7</string>
+    <string name="guild_8">Guild-8</string>
+    <string name="squad_8">Squad-8</string>
+    <string name="guild_9">Guild-9</string>
+    <string name="squad_9">Squad-9</string>
+    <string name="guild_10">Guild-10</string>
+    <string name="squad_10">Squad-10</string>
+    <string name="guild_11">Guild-11</string>
+    <string name="squad_11">Squad-11</string>
+    <string name="guild_12">Guild-12</string>
+    <string name="squad_12">Squad-12</string>
+    <string name="next">Next</string>
+    <string name="match_1">Match-1</string>
+    <string name="position">Position</string>
+    <string name="kill">Kill</string>
+    <string name="calculate">Calculate</string>
+    <string name="about">About</string>
+    <string name="version">Version</string>
+    <string name="versionNo">1.0.1</string>
+    <string name="designed_and_developed_by">Designed and Developed By</string>
+    <string name="nurullah_al_masum">Nurullah Al Masum</string>
+    <string name="match_2">Match-2</string>
+    <string name="preview"><u>Preview</u></string>
+    <string name="copy_as_text">Copy As Text</string>
+    <string name="save_as_image">Save As Image</string>
+    <string name="chose_result_format">Chose Result Format</string>
+    <string name="coming_soon">Coming Soon...</string>
+    <string name="how_to_use">How to Use</string>
+    <string name="feedback">Feedback</string>
+    <string name="about_us">About Us</string>
+    <string name="check_for_updates">Check for Updates</string>
+    <string name="product_update">Product Update</string>
+    <string name="checking_for_updates">Checking for updates...</string>
+    <string name="submit">Submit</string>
+    <string name="message">Message</string>
+    <string name="your_feedback_is_important_for_us">Your Feedback Is Important For Us!</string>
+    <string-array name="format">
+        <item>X. Name = PP+KP = TP(X Kill)</item>
+        <item>X. Name = KP+PP = TP(X Kill)</item>
+        <item>X. Name = MP+... = TP(X Kill)</item>
+    </string-array>
+</resources>
