@@ -24,13 +24,21 @@ public class UpdatesDialog extends AppCompatDialogFragment {
     int x;
     Context context;
     LinearLayout ll;
-    String details, version, appUrl;
+    String details, version, appUrl,whatsNewUrl;
 
-    public UpdatesDialog(Context context, String details, String version, int x) {
+    public UpdatesDialog( Context context, String details, String version, String appUrl, String whatsNewUrl,int x) {
         this.x = x;
         this.context = context;
         this.details = details;
         this.version = version;
+        this.appUrl = appUrl;
+        this.whatsNewUrl = whatsNewUrl;
+    }
+
+    public UpdatesDialog(Context context, String details, int x) {
+        this.x = x;
+        this.context = context;
+        this.details = details;
     }
 
     public UpdatesDialog(Context context, String details, String version, String appUrl, int x) {
@@ -60,7 +68,7 @@ public class UpdatesDialog extends AppCompatDialogFragment {
                             dialog.cancel();
                         }
                     });
-        } else {
+        } else if(x==1) {
             detailsTv.setText(details);
             latestVersionTv.setText(version + "]");
             dialog.setView(view)
@@ -76,6 +84,25 @@ public class UpdatesDialog extends AppCompatDialogFragment {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.cancel();
+                        }
+                    });
+        }else{
+            detailsTv.setText(details);
+            latestVersionTv.setText(version + "]");
+            dialog.setView(view)
+                    .setPositiveButton("UPDATE", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(appUrl));
+                            startActivity(intent);
+
+                        }
+                    })
+                    .setNegativeButton("WHAT'S NEW?", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(whatsNewUrl));
+                            startActivity(intent);
                         }
                     });
         }

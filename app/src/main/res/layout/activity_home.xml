@@ -87,7 +87,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/exo_bold"
                         android:gravity="center"
-                        android:text="@string/tournament"
+                        android:text="@string/guild_war"
                         android:textColor="#000"
                         android:textSize="40sp"
                         android:textStyle="bold" />
@@ -118,7 +118,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/exo_bold"
                         android:gravity="center"
-                        android:text="@string/guild_war"
+                        android:text="@string/tournament"
                         android:textColor="#000"
                         android:textSize="40sp"
                         android:textStyle="bold" />

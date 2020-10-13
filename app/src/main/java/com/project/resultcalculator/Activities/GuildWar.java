@@ -90,7 +90,7 @@ public class GuildWar extends AppCompatActivity {
     }
 
     public void vs(View v) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/variableshops"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://variableshops.com/"));
         startActivity(intent);
     }
 }

@@ -40,6 +40,32 @@ public class Home extends AppCompatActivity implements PopupMenu.OnMenuItemClick
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
         setContentView(R.layout.activity_home);
+        if(isConnected()){
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Updates");
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    String[] updates = new String[3];
+                    if (dataSnapshot.exists()) {
+                        int i = 0;
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            updates[i++] = dataSnapshot1.getValue().toString();
+                        }
+                        String pVersion = "1.0.3";
+                        if (!updates[1].equals(pVersion)) {
+                            details = "A new version is available. Would you like to update now?";
+                            UpdatesDialog updatesDialog = new UpdatesDialog(Home.this, details, updates[1], updates[0],updates[2], 2);
+                            updatesDialog.setCancelable(false);
+                            updatesDialog.show(getSupportFragmentManager(), null);
+                        }
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
 
         //CardView
         cardView1 = findViewById(R.id.cv1);
@@ -48,19 +74,21 @@ public class Home extends AppCompatActivity implements PopupMenu.OnMenuItemClick
         cardView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Home.this, Tournament.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            }
-        });
-        cardView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 Intent intent = new Intent(Home.this, GuildWar.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
+
+        cardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, Tournament.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
@@ -89,13 +117,13 @@ public class Home extends AppCompatActivity implements PopupMenu.OnMenuItemClick
                     databaseReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            String[] updates = new String[2];
+                            String[] updates = new String[3];
                             if (dataSnapshot.exists()) {
                                 int i = 0;
                                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                                     updates[i++] = dataSnapshot1.getValue().toString();
                                 }
-                                String pVersion = "1.0.1";
+                                String pVersion = "1.0.3";
                                 if (!updates[1].equals(pVersion)) {
                                     details = "A new version is available. Would you like to update now?";
                                     progressDialog.dismiss();
@@ -105,7 +133,7 @@ public class Home extends AppCompatActivity implements PopupMenu.OnMenuItemClick
                                 } else {
                                     progressDialog.dismiss();
                                     details = "Your are using latest version of this app.";
-                                    UpdatesDialog updatesDialog = new UpdatesDialog(Home.this, details, updates[1], updates[0], 0);
+                                    UpdatesDialog updatesDialog = new UpdatesDialog(Home.this,details,0);
                                     updatesDialog.setCancelable(false);
                                     updatesDialog.show(getSupportFragmentManager(), null);
                                 }
@@ -170,7 +198,7 @@ public class Home extends AppCompatActivity implements PopupMenu.OnMenuItemClick
     }
 
     public void vs(View v) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/variableshops"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://variableshops.com/"));
         startActivity(intent);
     }
 }
